@@ -48,11 +48,11 @@ void Board::printBoard() const{
     std::cout<<"  a b c d e f g h"<<std::endl;
 }
 
-void Board::placePiece(int row, int col, PieceType type, PieceColor color){
+void Board::placePiece(int row, int col, Piece* piece){
     if(this->board[row][col] != nullptr){
         delete this->board[row][col];
     }
-    this->board[row][col] = new Piece(type, color);
+    this->board[row][col] = piece;
 }
 
 void Board::movePiece(int startRow, int startCol, int targetRow, int targetCol){
